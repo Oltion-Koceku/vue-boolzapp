@@ -24,7 +24,7 @@
           <div class="contacts ">
             <div class="accaunt spazi align-center d-flex justify-between ">
               <div class="icon">
-                <img src="assets/img/avatar_io.jpg" alt="">
+                <img src="img/avatar_io.png" alt="">
               </div>
               <div class="imposta">
                 <i class="fa-solid fa-circle-notch"></i>
@@ -51,14 +51,14 @@
             </div>
             <div class="contatti f-column d-flex justify-between ">
               
-              <div v-for="(contact, indice) in contacts" class="user spazi d-flex justify-between">
+              <div  v-for="(contact, indice) in contacts"  @click="changeUser(indice)" class="user spazi d-flex justify-between">
                 <div class="chat-text d-flex align-center">
                   <div class="icon ">
                     <img :src="contact.avatar" alt="">
                   </div>
                   <div class="name">
                     <strong>{{contact.name}}</strong>
-                    <p>Lorem ipsum dolor sit amet,</p>
+                    <p>Ultimo messaggio </p>
                   </div>
                 </div>
                 <div class="clock"><span>16:05</span></div>
@@ -68,15 +68,15 @@
           </div>
           <!-- /Contatti -->
           <!-- Chat -->
-          <div class="chat ">
+          <div v-for="(contact, indice) in contacts" :class="contact.visible ? 'd-none' : '' " class="chat ">
             <div class="accaunt spazi d-flex justify-between ">
                 <div class="text-icon d-flex spazi align-center">
                   <div class="icon">
-                    <img src="assets/img/avatar_1.jpg" alt="">
+                    <img :src="contact.avatar" alt="">
                   </div>
                   <div class="name">
-                    <strong>Michele</strong>
-                    <p>Ultimo accesso oggi alle 16.26</p>
+                    <strong>{{contact.name}}</strong>
+                    <p></p>
                   </div>
                 </div>  
                 <div class="imposta d-flex align-center">
@@ -85,27 +85,14 @@
                   <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
               </div>
-              <div class="text f-column d-flex">
-                <div class="box-text p-relative d-flex spazi">
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo sed corrupti, sunt ratione quod officiis! Illo rerum suscipit iste recusandae harum, magni at possimus rem dicta deleniti. Provident, est nihil.Illo rerum </p>
+              <div class="text f-column  d-flex">
+
+                <div v-for="(element, i) in contact.messages" :class="element.status === 'sent' ? 'sent' : 'received' " class="box-text p-relative d-flex spazi">
+                  <p>{{element.message}}</p>
                   <div class="info d-flex f-column justify-between align-center">
                     <div class="menu">
                       <i class="fa-solid fa-chevron-down"></i>
                       <div class="chevron due j-center d-flex p-absolute f-column spazi">
-                        <h4>Info messaggi</h4>
-                        <h4>Cancella messaggi</h4>
-                      </div>     
-                    </div>
-                    <div class="clock-chat">16:13</div>
-                  </div>
-                </div>
-  
-                <div class="box-text p-relative d-flex not-me spazi">
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo sed corrupti, sunt ratione quod officiis! Illo rerum suscipit iste recusandae harum, magni at possimus rem dicta deleniti. Provident, est nihil.Illo rerum </p>
-                  <div class="info d-flex f-column justify-between align-center">
-                    <div class="menu">
-                      <i class="fa-solid fa-chevron-down"></i>
-                      <div class="chevron due d-flex p-absolute f-column spazi">
                         <h4>Info messaggi</h4>
                         <h4>Cancella messaggi</h4>
                       </div>     

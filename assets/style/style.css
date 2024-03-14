@@ -237,7 +237,7 @@ i {
   width: 100%;
   height: 750px;
   overflow-y: scroll;
-  background-image: url(../img/mine.jpg);
+  background-image: url(../../img/mine.png);
 }
 
 .chat .input {
@@ -275,13 +275,15 @@ i {
 
 .text .box-text {
   width: 61%;
-  background-color: var(--my-message);
   border-radius: 10px;
   margin-bottom: 20px;
   margin-left: 39%;
 }
+.text .box-text.sent{
+  background-color: var(--my-message);
 
-.text .box-text.d-flex.not-me {
+}
+.text .box-text.d-flex.received {
   margin: 0;
   background-color: white;
 }
@@ -426,7 +428,7 @@ input {
   --d-border: #c5d9e4;
   --d-search: #2A3942;
 
-  --
+
 }
 
 body.dark-mode {
@@ -454,7 +456,7 @@ body.dark-mode {
 }
 
 .dark-mode .chat .text {
-  background-image: url(../img/mine2.jpg);
+  background-image: url(../../img/mine2.png);
 }
 
 .dark-mode .chat .text .box-text {
@@ -462,7 +464,7 @@ body.dark-mode {
   background-color: var(--d-my-message);
 }
 
-.dark-mode .chat .text .box-text.not-me {
+.dark-mode .chat .text .box-text.received {
   background-color: var(--d-accaunt);
 }
 
