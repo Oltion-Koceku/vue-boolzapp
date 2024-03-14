@@ -17,7 +17,4 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
 
-## Svolgimento:
-1. con il ciclo v-for creiamo stampiamo in html tutto il contacts
-2. con un v-for ho stampato tutte le chat
-3. al click contact.visible diventa false quindi si vede la chat
+

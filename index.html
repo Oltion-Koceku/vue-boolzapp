@@ -46,12 +46,12 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
               <div class="nuova">
-                <input type="search" placeholder="Cerca o inizia una nuova chat" >
+                <input type="search" @click="searchContact()" v-model="search" placeholder="Cerca o inizia una nuova chat" >
               </div>
             </div>
             <div class="contatti f-column d-flex justify-between ">
               
-              <div  v-for="(contact, indice) in contacts"  @click="changeUser(indice)" class="user spazi d-flex justify-between">
+              <div  v-for="(contact, indice) in searchContact"  @click="changeUser(indice)" class="user spazi d-flex justify-between">
                 <div class="chat-text d-flex align-center">
                   <div class="icon ">
                     <img :src="contact.avatar" alt="">
