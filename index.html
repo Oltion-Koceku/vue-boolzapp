@@ -61,7 +61,7 @@
                     <p>{{contact.messages[contact.messages.length - 1].message}} </p>
                   </div>
                 </div>
-                <div class="clock"><span>16:05</span></div>
+                <div class="clock"><span>{{contact.messages[contact.messages.length - 1].date}}</span></div>
               </div>
   
             </div>
@@ -97,14 +97,14 @@
                         <h4>Cancella messaggi</h4>
                       </div>     
                     </div>
-                    <div class="clock-chat">16:13</div>
+                    <div class="clock-chat">{{element.date}}</div>
                   </div>
                 </div>
                 
               </div>
               <div class="input  d-flex justify-between align-center">
                 <div class="emoji"><i class="fa-regular fa-face-smile"></i></div>
-                <div class="search messaggio"><input @keyup.enter="enterMyMessage()" v-model.trim="newMyText.message" type="search" placeholder="Scrivi un messaggio"></div>
+                <div class="search messaggio"><input @keyup.enter="enterMyMessage(indice), userMessage(indice)" v-model.trim="newMyText.message" type="search" placeholder="Scrivi un messaggio"></div>
                 <div class="audio"><i class="fa-solid fa-microphone"></i></div>
               </div>
             </div>
