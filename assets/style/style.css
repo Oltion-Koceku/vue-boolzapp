@@ -1,0 +1,478 @@
+/* Reset */
+
+:root {
+  --accaunt: #eaeaea;
+  --notifiche: #8edafc;
+  --cerca: #fafafa;
+  --my-message: #d5f9ba;
+  --imput: #f3eeea;
+  --background: #009688;
+  --imposta: #b1b1b1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.debug {
+  border: 1px solid black;
+  background-color: lightgreen;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  overflow-y: hidden;
+  background: linear-gradient(to bottom,
+      var(--background) 0%,
+      var(--background) 15%,
+      #dadbd4 15%,
+      #dadbd4 100%)
+}
+
+/* layout */
+.container {
+  max-width: 1300px;
+  max-height: 900px;
+  margin: 20px auto;
+  width: 90%;
+  height: 99%;
+}
+
+.row {
+  display: flex;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.spazi {
+  width: 100%;
+  padding: 10px;
+}
+
+img {
+  object-fit: cover;
+  width: 88%;
+  border-radius: 50%;
+}
+
+i {
+  font-size: 25px;
+}
+
+/* utility */
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.icon {
+  width: 60px;
+}
+
+.accaunt {
+  background-color: var(--accaunt);
+  width: 100%;
+  height: 75px;
+}
+
+.name {
+  padding-left: 10px;
+}
+
+.name strong {
+  font-size: 20px;
+}
+
+.name p {
+  color: var(--imposta);
+}
+
+.imposta i {
+  padding: 5px;
+  color: var(--imposta);
+}
+
+/* display */
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+
+/* main */
+/* Contatti e chat */
+.row .contacts {
+  max-width: 390px;
+  max-height: 900px;
+  width: 100%;
+}
+
+.row .chat {
+  width: 910px;
+  height: 900px;
+
+}
+
+.accaunt {
+  justify-content: space-between;
+}
+
+/* /Contatti e chat */
+
+/* contatti */
+.contacts .accaunt {
+  border-right: 1px solid lightgray;
+}
+
+.contacts .notifiche {
+  width: 100%;
+  height: 80px;
+  background-color: var(--notifiche);
+}
+
+.contacts .cerca {
+  width: 100%;
+  height: 50px;
+  background-color: var(--cerca);
+}
+
+.contacts .contatti {
+  width: 100%;
+  height: 695px;
+  overflow-y: scroll;
+  background-color: white;
+}
+
+.contacts .contatti .user {
+  width: 100%;
+  height: calc(100% / 7);
+  border-bottom: 1px solid lightgray;
+}
+
+/* dettaggli */
+
+
+.notifiche .icon {
+  background-color: white;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.notifiche .icon i {
+  color: var(--notifiche);
+  font-size: 21px;
+}
+
+.notifiche .attiva {
+  padding-left: 10px;
+}
+
+.notifiche .attiva h3 {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+
+.notifiche .attiva a {
+  font-size: 13px;
+}
+
+.cerca .search i {
+  color: var(--imposta);
+  font-size: 18px;
+  padding: 9px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-right: white;
+}
+
+.cerca .nuova input {
+  border: white;
+  width: 330px;
+  padding: 10px;
+  color: var(--imposta);
+  border: 1px solid lightgray;
+  border-left: white;
+}
+
+.contatti .user .clock {
+  padding-top: 11px;
+  color: var(--accaunt);
+}
+
+
+/* /dettaggli */
+
+/* /contatti */
+
+/* chat */
+
+.chat .text {
+  width: 100%;
+  height: 750px;
+  overflow-y: scroll;
+  background-image: url(../img/mine.jpg);
+}
+
+.chat .input {
+  width: 100%;
+  height: 75px;
+  background-color: var(--imput);
+}
+
+.chat .text {
+  padding: 50px 90px;
+}
+
+.chevron {
+  width: 200px;
+  height: 80PX;
+  background-color: white;
+  box-shadow: 5px 5px 5px #888888;
+  top: 20px;
+  right: 40px;
+  display: none;
+  text-align: center;
+}
+
+
+.chevron.due {
+  top: 20px;
+  right: 40px;
+
+}
+
+/* dettagli chat */
+.chat .accaunt .text-icon .name p {
+  color: gray;
+}
+
+.text .box-text {
+  width: 61%;
+  background-color: var(--my-message);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-left: 39%;
+}
+
+.text .box-text.d-flex.not-me {
+  margin: 0;
+  background-color: white;
+}
+
+.text .box-text p {
+  padding-bottom: 40px;
+}
+
+.text .box-text .info i {
+  font-size: 15px;
+}
+
+.text .box-text .info .menu:hover .chevron {
+  display: block;
+}
+
+.text .box-text .info .clock-chat {
+  font-size: 10px;
+}
+
+.input i {
+  padding: 15px 20px;
+  font-size: 25px;
+  color: gray;
+}
+
+.input .search,
+input {
+  width: 100%;
+  border: white;
+}
+
+.input .search input {
+  height: 55px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.text .chevron h4 {
+  padding-bottom: 20px;
+}
+
+/* /dettagli chat */
+
+/* /chat */
+
+/* responsive */
+/* Tablet */
+@media screen and (max-width: 992px) {
+  .container {
+    margin: 0;
+    width: auto;
+  }
+
+  .row .contacts {
+    max-width: 100px;
+    width: 100%;
+  }
+
+  /* contatti */
+  .contacts .accaunt {
+    justify-content: center;
+  }
+
+  .contacts .notifiche {
+    display: none;
+  }
+
+  .contacts .cerca {
+    display: none;
+  }
+
+  .contacts .contatti {
+    height: 825px;
+  }
+
+  .contacts .contatti .name,
+  .clock {
+    display: none;
+  }
+
+  .contacts .accaunt .imposta {
+    display: none;
+  }
+
+  .contacts .contatti .user {
+    justify-content: center;
+  }
+
+  /* /contatti */
+  .chat .text {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+/* /Tablet */
+/* mobile */
+@media screen and (max-width:542px) {
+  .container {
+    margin: 0;
+    width: auto;
+  }
+
+  .row .contacts {
+    display: none;
+  }
+
+  /* chat */
+  .imposta {
+    display: none;
+  }
+
+  .row .chat {
+    width: 542px;
+    height: 900px;
+  }
+
+  .text .box-text {
+    width: 80%;
+    margin-left: 21%;
+  }
+
+  .chat .input .emoji,
+  .audio {
+    display: none;
+  }
+
+  /* /chat */
+}
+
+/* dark mode */
+:root {
+  --d-accaunt: #202C33;
+  --d-notifiche: #8edafc;
+  --d-cerca: #fafafa;
+  --d-my-message: #005C4B;
+  --d-imput: #8696A0;
+  --d-background: #0C1317;
+  --d-imposta: #AEBAC1;
+  --d-contatti: #111B21;
+  --d-border: #c5d9e4;
+  --d-search: #2A3942;
+
+  --
+}
+
+body.dark-mode {
+  background: var(--d-background);
+
+}
+
+.dark-mode .accaunt {
+  background-color: var(--d-accaunt);
+}
+
+.dark-mode .accaunt .imposta i {
+  color: var(--d-imposta);
+}
+
+.dark-mode .contacts .cerca,
+.dark-mode .contacts .user.spazi {
+  background-color: var(--d-contatti);
+}
+
+.dark-mode .contacts .cerca .nuova input,
+.dark-mode .contacts .cerca .search i {
+  background-color: var(--d-accaunt);
+  border: var(--d-accaunt);
+}
+
+.dark-mode .chat .text {
+  background-image: url(../img/mine2.jpg);
+}
+
+.dark-mode .chat .text .box-text {
+  color: white;
+  background-color: var(--d-my-message);
+}
+
+.dark-mode .chat .text .box-text.not-me {
+  background-color: var(--d-accaunt);
+}
+
+.dark-mode .chat .input {
+  background-color: var(--d-accaunt);
+}
+
+.dark-mode .chat .input .search input {
+  background-color: var(--d-search);
+  color: var(--d-imposta);
+}
+
+/* /dark mode */
