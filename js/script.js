@@ -23,11 +23,7 @@ createApp({
     },
 
     enterMyMessage(){
-      for (const contact of this.contacts) {
-        for (const mes of contact.messages) {
-          mes.push(this.newMyText)
-        }
-      }
+      this.contacts.messages.push(this.newMyText)
     }
 
 
