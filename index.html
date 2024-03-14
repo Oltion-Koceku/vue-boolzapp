@@ -93,8 +93,8 @@
                     <div class="menu">
                       <i class="fa-solid fa-chevron-down"></i>
                       <div class="chevron due j-center d-flex p-absolute f-column spazi">
-                        <h4>Info messaggi</h4>
-                        <h4>Cancella messaggi</h4>
+                        <button>Info messaggi</button>
+                        <button @click="deleteMessage(indice, i)">Cancella messaggi</button>
                       </div>     
                     </div>
                     <div class="clock-chat">{{element.date}}</div>

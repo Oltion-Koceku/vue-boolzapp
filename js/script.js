@@ -54,6 +54,9 @@ createApp({
       }, 1000)
     },
 
+    deleteMessage(indice, i){
+      this.contacts[indice].messages.splice(i)
+    }
     
   },
   

@@ -264,8 +264,12 @@ i {
 
 .chevron.due {
   top: 20px;
-  right: 40px;
+  right: 25px;
 
+}
+
+.info{
+  align-items: end;
 }
 
 /* dettagli chat */
@@ -281,11 +285,15 @@ i {
 }
 .text .box-text.sent{
   background-color: var(--my-message);
-
+  display: flex;
+  justify-content: space-between;
 }
 .text .box-text.d-flex.received {
   margin: 0;
   background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .text .box-text p {
@@ -322,8 +330,11 @@ input {
   padding: 10px;
 }
 
-.text .chevron h4 {
-  padding-bottom: 20px;
+
+.text .chevron button {
+  border: none;
+  background-color: white;
+  font-size: 20px;
 }
 
 /* /dettagli chat */
