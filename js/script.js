@@ -32,12 +32,15 @@ createApp({
 
   methods: {
     changeUser(indice) {
-      // reset per il cambio chat
-      this.contacts.forEach(contact => {
-        contact.visible = true
-      });
-      // rendo visibile la chat
-      this.contacts[indice].visible = false
+      const originalIndex = this.contacts.findIndex(contact => contact === this.searchContact[indice]);
+      if (originalIndex !== -1) {
+        this.contacts.forEach(contact => {
+          contact.visible = true;
+        });
+        this.contacts[originalIndex].visible = false;
+      } else {
+        return null
+      }
     },
 
     enterMyMessage(indice) {
@@ -103,6 +106,8 @@ createApp({
     getLastDate(contact){
       if (contact.messages.length > 0) {
         return contact.messages[contact.messages.length - 1].date
+      }else {
+        return null;
       }
     },
 
@@ -112,7 +117,7 @@ createApp({
 
   computed: {
     searchContact() {
-      return contacts.filter(contact => contact.name.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()))
+      return this.contacts.filter(contact => contact.name.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()))
     }
 
   },

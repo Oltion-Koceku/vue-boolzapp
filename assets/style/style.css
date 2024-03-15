@@ -101,6 +101,7 @@ i {
 
 .name {
   padding-left: 10px;
+  width: 200px;
 }
 
 .name strong {
@@ -227,8 +228,8 @@ i {
 }
 
 .contatti .user .clock {
-  padding-top: 11px;
   color: var(--accaunt);
+  width: 90px;
 }
 
 
