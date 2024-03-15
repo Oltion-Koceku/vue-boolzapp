@@ -96,8 +96,8 @@
                   <p>{{element.message}}</p>
                   <div class="info d-flex f-column justify-between align-center">
                     <div class="menu">
-                      <i @click="chevronClick = true" class="fa-solid fa-chevron-down"></i>
-                      <div :class=" chevronClick === true ? 'block' : '' " class="chevron due j-center d-flex p-absolute f-column spazi">
+                      <i @click="ch" class="fa-solid fa-chevron-down"></i>
+                      <div class="chevron due j-center d-flex p-absolute f-column spazi">
                         <button>Info messaggi</button>
                         <button @click="deleteMessage(indice, i)">Cancella messaggi</button>
                       </div>     

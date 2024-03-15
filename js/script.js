@@ -64,6 +64,7 @@ createApp({
       
       this.printUserData()
       setTimeout(()=>{
+        // resetto newUserText.date
         
         this.newUserText = {
           date: '',
@@ -100,9 +101,7 @@ createApp({
       }
     },
 
-    resetChevron(){
-      chevronClick = false
-    }
+  
 
   },
 

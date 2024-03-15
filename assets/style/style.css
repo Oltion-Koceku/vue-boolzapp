@@ -320,7 +320,7 @@ i {
 .text .box-text .info .menu:hover .fa-solid.fa-chevron-down {
   display: block;
 }
-.text .box-text .info .menu .chevron.block {
+.text .box-text .info .menu:hover .chevron {
   display: block;
 }
 
