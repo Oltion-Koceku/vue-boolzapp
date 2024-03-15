@@ -23,8 +23,9 @@ createApp({
       // ricerca
       search: '',
 
-      chevronClick : false
-
+      chevronClick : false,
+      
+      dark: true
     }
   },
 
@@ -76,7 +77,9 @@ createApp({
     },
 
     deleteMessage(indice, i) {
-      this.contacts[indice].messages.splice(i)
+      if (this.contacts[indice].messages.length > 0) {
+        this.contacts[indice].messages.splice(i, 1);
+      }
     },
 
     printMyData(){
@@ -91,7 +94,9 @@ createApp({
     
     getLastMessage(contact){
       if (contact.messages.length > 0) {
-        return contact.messages[contact.messages.length - 1].message
+        return contact.messages[contact.messages.length - 1].message;
+      } else {
+        return null;
       }
     },
 

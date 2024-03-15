@@ -20,7 +20,7 @@
   <title>Boolzapp UI</title>
 </head>
 <!-- Inserire dark-mode dentro body -->
-<body class="">
+<body :class="dark === true ? 'dark-mode' : '' " class="">
   <main>
     <div id="app">
       <div class="container ">
@@ -86,7 +86,7 @@
                 </div>  
                 <div class="imposta d-flex align-center">
                   <i class="fa-solid fa-magnifying-glass"></i>
-                  <i class="fa-solid fa-paperclip"></i>
+                  <i @click="dark === true ? dark= false : dark = true" class="fa-solid fa-moon"></i>
                   <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
               </div>
@@ -96,7 +96,7 @@
                   <p>{{element.message}}</p>
                   <div class="info d-flex f-column justify-between align-center">
                     <div class="menu">
-                      <i @click="ch" class="fa-solid fa-chevron-down"></i>
+                      <i class="fa-solid fa-chevron-down"></i>
                       <div class="chevron due j-center d-flex p-absolute f-column spazi">
                         <button>Info messaggi</button>
                         <button @click="deleteMessage(indice, i)">Cancella messaggi</button>
