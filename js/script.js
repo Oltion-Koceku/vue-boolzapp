@@ -42,6 +42,7 @@ createApp({
     enterMyMessage(indice) {
       if (this.newMyText.message.length + 1 > 0) {
         this.contacts[indice].messages.push(this.newMyText)
+        this.printMyData()
         // resetto newMyText
         this.newMyText = {
           date: '',
@@ -49,6 +50,8 @@ createApp({
           status: 'sent'
         }
       }
+
+
 
     },
 
@@ -58,6 +61,17 @@ createApp({
         this.contacts[indice].messages.push(this.newUserText)
         console.log(this.newUserText.message);
       }, 1000)
+      
+      this.printUserData()
+      setTimeout(()=>{
+        
+        this.newUserText = {
+          date: '',
+          message: 'OK',
+          status: 'received'
+        }
+      }, 1000)
+
     },
 
     deleteMessage(indice, i) {
@@ -100,8 +114,6 @@ createApp({
   },
 
   mounted() {
-    this.printMyData()
-    this. printUserData()
   }
 }).mount("#app")
 
