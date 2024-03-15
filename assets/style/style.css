@@ -125,6 +125,11 @@ i {
   display: none;
 }
 
+.d-block{
+  display: block;
+
+}
+
 
 /* main */
 /* Contatti e chat */
@@ -261,6 +266,9 @@ i {
   text-align: center;
 }
 
+.fa-solid.fa-chevron-down {
+  display: none;
+}
 
 .chevron.due {
   top: 20px;
@@ -304,7 +312,15 @@ i {
   font-size: 15px;
 }
 
-.text .box-text .info .menu:hover .chevron {
+.menu {
+  width: 20px;
+  height: 20px;
+}
+
+.text .box-text .info .menu:hover .fa-solid.fa-chevron-down {
+  display: block;
+}
+.text .box-text .info .menu .chevron.block {
   display: block;
 }
 

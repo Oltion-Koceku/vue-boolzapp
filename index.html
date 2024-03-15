@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- luxon -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.4/luxon.min.js' integrity='sha512-dUlSLLkxslGILhPdCkALwk4szPhp3xmZIKFtlUD+O9Lslq41Aksmdt5OGqpomDoT4FsCUH70jQU8ezZHI3v1RQ==' crossorigin='anonymous'></script>
   <!-- VUE JS -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="stylesheet" href="assets/style/style.css">
@@ -12,6 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+
+
   <title>Boolzapp UI</title>
 </head>
 <!-- Inserire dark-mode dentro body -->
@@ -46,10 +51,10 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
               <div class="nuova">
-                <input type="search" @click="searchContact()" v-model="search" placeholder="Cerca o inizia una nuova chat" >
+                <input type="search" @keyup="searchContact()" v-model="search" placeholder="Cerca o inizia una nuova chat" >
               </div>
             </div>
-            <div class="contatti f-column d-flex justify-between ">
+            <div class="contatti f-column d-flex ">
               
               <div  v-for="(contact, indice) in searchContact"  @click="changeUser(indice)" class="user spazi d-flex justify-between">
                 <div class="chat-text d-flex align-center">
@@ -58,10 +63,10 @@
                   </div>
                   <div class="name">
                     <strong>{{contact.name}}</strong>
-                    <p>{{contact.messages[contact.messages.length - 1].message}} </p>
+                    <p>{{getLastMessage(contact)}} </p>
                   </div>
                 </div>
-                <div class="clock"><span>{{contact.messages[contact.messages.length - 1].date}}</span></div>
+                <div class="clock"><span>{{getLastDate(contact)}}</span></div>
               </div>
   
             </div>
@@ -91,8 +96,8 @@
                   <p>{{element.message}}</p>
                   <div class="info d-flex f-column justify-between align-center">
                     <div class="menu">
-                      <i class="fa-solid fa-chevron-down"></i>
-                      <div class="chevron due j-center d-flex p-absolute f-column spazi">
+                      <i @click="chevronClick = true" class="fa-solid fa-chevron-down"></i>
+                      <div :class=" chevronClick === true ? 'block' : '' " class="chevron due j-center d-flex p-absolute f-column spazi">
                         <button>Info messaggi</button>
                         <button @click="deleteMessage(indice, i)">Cancella messaggi</button>
                       </div>     
